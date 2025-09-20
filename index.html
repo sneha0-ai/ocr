@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Photo Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Advanced Photo Analyzer</h1>
+            <p>Upload any image for AI-powered analysis: Face recognition, OCR, and fake detection</p>
+        </div>
+
+        <div class="main-card">
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                <div class="upload-icon">📸</div>
+                <div class="upload-text">Click to upload or drag & drop your image</div>
+                <div class="upload-subtext">Supports JPG, PNG, GIF, WebP formats</div>
+                <input type="file" id="fileInput" accept="image/*">
+            </div>
+
+            <div class="preview-container" id="previewContainer" style="display: none;">
+                <img id="previewImage" class="preview-image" alt="Uploaded image">
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analyzing your image with AI...</p>
+            </div>
+
+            <div class="analysis-grid" id="analysisResults" style="display: none;">
+                <div class="analysis-card" id="faceCard">
+                    <h3><span class="card-icon">👤</span>Face Recognition</h3>
+                    <div id="faceResults"></div>
+                </div>
+
+                <div class="analysis-card" id="ocrCard">
+                    <h3><span class="card-icon">📝</span>Text Recognition (OCR)</h3>
+                    <div id="ocrResults"></div>
+                </div>
+
+                <div class="analysis-card" id="fakeCard">
+                    <h3><span class="card-icon">🛡️</span>Authenticity Check</h3>
+                    <div id="fakeResults"></div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn" onclick="resetAnalysis()">Upload New Image</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
